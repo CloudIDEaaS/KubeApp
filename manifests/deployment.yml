@@ -1,0 +1,16 @@
+apiVersion : apps/v1beta1
+kind: Deployment
+metadata:
+  name: kubeapp 
+spec:
+  replicas: 1
+  template:
+    metadata:
+      labels:
+        app: kubeapp 
+    spec:
+      containers:
+        - name: kubeapp 
+          image: hydracontainerregistry.azurecr.io/kubeapp
+          ports:
+          - containerPort: 80
